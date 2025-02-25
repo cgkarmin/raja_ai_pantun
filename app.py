@@ -99,7 +99,7 @@ tab1, tab2, tab3 = st.tabs(["Pengenalan", "Senarai Raja Pantun", "Jadi Raja Pant
 
 with tab1:
     st.header("Pengenalan")
-    st.write("Sistem ini menilai pantun berdasarkan suku kata, rima tengah, dan rima akhir.")
+    st.write("Anda ingin tahu siapakah Raja Pantun. Anda ingin jadi Raja Pantun? .")
 
 with tab2:
     st.header("Senarai Raja Pantun")
