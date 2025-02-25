@@ -1,0 +1,4 @@
+Kategori,Perincian,Potongan Markah,
+Markah Struktur,Markah penuh jika pantun lengkap 4 baris,0,
+Markah Rentak,Penalti jika suku kata tidak seimbang atau tidak dalam lingkungan 9-12,-1 jika suku kata tidak sama,
+Markah Rima,Penalti jika rima akhir atau rima tengah tidak seragam antara pembayang & maksud,-2 (RA), -1 (RT) jika tidak sepadan

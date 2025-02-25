@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raja Pantun - Leaderboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        nav { text-align: center; margin-bottom: 20px; }
+        nav a { margin: 10px; text-decoration: none; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">🏠 Halaman Utama</a>
+    </nav>
+
+    <h1>🏆 Leaderboard Pemantun 🏆</h1>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Jumlah Pantun</th>
+            <th>Markah Keseluruhan</th>
+            <th>Purata Markah</th>
+            <th>Gelaran</th>
+        </tr>
+        {% for index, row in leaderboard.iterrows() %}
+        <tr>
+            <td><a href="{{ url_for('pemantun_detail', nama=row.author) }}">{{ row.author }}</a></td>
+            <td>{{ row.jumlah_pantun }}</td>
+            <td>{{ row.markah_keseluruhan }}</td>
+            <td>{{ "%.2f"|format(row.purata_markah) }}</td>
+            <td>{{ row.Gelaran }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h1>📜 Pantun Terbaik 📜</h1>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Pantun</th>
+            <th>Markah Penuh</th>
+        </tr>
+        {% for index, row in pantun_terbaik.iterrows() %}
+        <tr>
+            <td>{{ row.author }}</td>
+            <td>{{ row.text.replace('\n', '<br>')|safe }}</td>
+            <td>{{ row.markah_penuh }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
